@@ -1,17 +1,48 @@
-const num = 266219
+'use strict'
 
-let arr = Array.from(String(num), Number)
+//***1.1***//
 
-let result = 1
+let lang_array = []
 
-for(let i = 0; i < arr.length; i++) {
-  result = result * arr[i]
+let lang = 'ru'
+
+lang = 'en'
+
+if (lang == 'ru') {
+  lang_array = ['Пн', 'Вт', 'СР', 'Чт', 'Пт', 'Сб', 'Вс']
+} else if (lang == 'en') {
+  lang_array = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 }
 
-console.log(result)
+console.log(lang_array)
 
-result **= 3
+//1.2/
 
-console.log(result)
+switch(lang) {
+  case 'ru': 
+    console.log(lang_array = ['Пн', 'Вт', 'СР', 'Чт', 'Пт', 'Сб', 'Вс'])
+    break
+  case 'en':
+    console.log(lang_array = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'])
+    break
+}
 
-console.log(String(result).slice(0,2))
+//1.3/
+lang_array['ru'] = ['Пн', 'Вт', 'СР', 'Чт', 'Пт', 'Сб', 'Вс']
+lang_array['en'] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+
+console.log(lang_array[lang]);
+
+// ***2***//
+
+let namePerson = 'Артем'
+
+namePerson = 'Александр'
+
+namePerson == 'Артем' ? console.log('Директор') : console.log('Студент')
+
+namePerson == 'Александр' ? console.log('Преподаватель') : console.log('Студент')
+
+
+
+
