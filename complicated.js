@@ -39,9 +39,7 @@ let namePerson = 'Артем'
 
 namePerson = 'Александр'
 
-namePerson == 'Артем' ? console.log('Директор') : console.log('Студент')
-
-namePerson == 'Александр' ? console.log('Преподаватель') : console.log('Студент')
+namePerson == 'Артем' ? console.log('Директор') : namePerson == 'Александр' ? console.log('Преподаватель') : console.log('Студент')
 
 
 
