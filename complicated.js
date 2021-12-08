@@ -2,11 +2,13 @@
 
 let notNumber
 
- while (isNaN(notNumber) || notNumber.toString().trim() === "" || notNumber === null) {
+notNumber = +prompt('Bведите число')
+
+ while (isNaN(notNumber) || notNumber.toString().trim() === "" || notNumber === 0) {
    notNumber = +prompt('Bведите число')
  }
 
- console.log (typeof notNumber)
+ console.log(notNumber, typeof notNumber)
 
 
 
