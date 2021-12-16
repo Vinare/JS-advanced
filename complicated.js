@@ -1,34 +1,21 @@
-'use strict'
+'use strict';
 
-//  №1 //
+const week = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+const day = document.getElementById('fordays');  // Получаем div куда будем добавлять дни недели
+const todayDay = new Date().getDay() - 1;
 
-let notNumber
-
-notNumber = +prompt('Bведите число')
-
- while (isNaN(notNumber) || notNumber.toString().trim() === "" || notNumber === 0) {
-   notNumber = +prompt('Bведите число')
- }
-
- console.log(notNumber, typeof notNumber)
-
-//  №2  //
-
-let arr = ['22', '38', '486', '298', '569', '46', '122']
-
-arr.forEach((number) => {
-  if (number.startsWith('2') || number.startsWith('4')) {
-  console.log(number)
+week.forEach((item, i) => {
+  let newdiv = document.createElement('div');   // Для каждого элемента массива week создаём свой div
+  if (i === todayDay) {    // Если текущий день недели соответствует дню недели массива
+    newdiv.classList.add('today');    //Вешаем на него класс bold 
+    newdiv.innerHTML = week[i];    // Вставляем текст в div
   }
-})
+  if (i === 5 || i === 6) {    //Если выходные то
+    newdiv.classList.add('italic');    // Выделяем день недели дополнительно курсивом 
+    newdiv.innerHTML = week[i];    // Вставляем текст в div
+  } else {       // Если не текущий день и не выходные,
+    newdiv.innerHTML = week[i];    // то просто вставляем текст без стилей
+  }
+  day.appendChild(newdiv);  // к предварительно созданному родительскому div добавляем доерние newdiv' ы 
+});
 
-//  №3  //
-
-function isPrime(n) {
-  for (let i = 2; i * i <= n; i == 2 ? i++ : i += 2) if (n % i == 0) return false;
-  return n > 1;
-}
-
-const res = [...Array(101)].reduce((a, _, i) => a.concat(isPrime(i) ? `${i}: Делители этого числа: 1 и ${i}` : []) , []).join('\n')
-
-console.log(res)
