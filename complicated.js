@@ -2,15 +2,17 @@
 
 const week = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
 const day = document.getElementById('fordays');  // Получаем div куда будем добавлять дни недели
-const todayDay = new Date().getDay() - 1;
+const options = { weekday: 'long'};
+const todayDay = new Date().toLocaleDateString('ru-RU', options);
+console.log(todayDay);
 
 week.forEach((item, i) => {
   let newdiv = document.createElement('div');   // Для каждого элемента массива week создаём свой div
-  if (i === todayDay) {    // Если текущий день недели соответствует дню недели массива
+  if (item.toLowerCase() === todayDay) {    // Если текущий день недели соответствует дню недели массива
     newdiv.classList.add('today');    //Вешаем на него класс bold 
     newdiv.innerHTML = week[i];    // Вставляем текст в div
   }
-  if (i === 5 || i === 6) {    //Если выходные то
+  if (item === "Суббота" || item === "Воскресенье") {    //Если выходные то
     newdiv.classList.add('italic');    // Выделяем день недели дополнительно курсивом 
     newdiv.innerHTML = week[i];    // Вставляем текст в div
   } else {       // Если не текущий день и не выходные,
