@@ -56,7 +56,7 @@ const appData = {
           price = prompt('Сколько это будет стоить?');
       } while (!appData.isNumber(price));  
       
-      appData.services[name + (i + 1)] = +price;  // собираем в объект services {} все ответы на вопросы 
+      appData.services[name + (i + 1)] = +price;  // собираем в объект services {} все ответы на вопросы о доп услугах
     }
 
     appData.adaptive = confirm('Нужен ли адаптив на сайте?');
