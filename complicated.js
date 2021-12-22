@@ -76,7 +76,6 @@ const appData = {
       return sum + screen.price;
     }, 0);  // суммируем стоимость всех экранов методом reduce 
     
-
     for(const service in appData.services) {  // суммируем стоимость всех доп услуг
       appData.allServicePrices += appData.services[service];
     }
