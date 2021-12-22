@@ -40,7 +40,7 @@ const appData = {
           price = prompt('Сколько будет стоить данная работа?');
       } while (!appData.isNumber(price));
 
-      appData.screens.push({id: i, name: name, price: price});  // формируем массив объектов с ключом и значением
+      appData.screens.push({id: i, name: name, price: +price});  // формируем массив объектов с ключом и значением
     }
     
     for (let i = 0; i < 2; i++) {
@@ -52,17 +52,11 @@ const appData = {
       
       let price = 0;
 
-      // if (i === 0) {
-      //   appData.name1 = prompt('Какой дополнительный тип услуги нужен?');
-      // } else if (i === 1) {
-      //   appData.name2 = prompt('Какой дополнительный тип услуги нужен?');
-      // } 
-
       do {
           price = prompt('Сколько это будет стоить?');
-      } while (!appData.isNumber(price)); 
-
-      appData.services[name] = +price; // собираем в объект services {} все ответы на вопросы поль-лю
+      } while (!appData.isNumber(price));  
+      
+      appData.services[name + (i + 1)] = +price;  // собираем в объект services {} все ответы на вопросы 
     }
 
     appData.adaptive = confirm('Нужен ли адаптив на сайте?');
@@ -77,12 +71,14 @@ const appData = {
   },
 
   addPrices: function() {  // суммируем общую стоимость экранов и услуг
-    for (let screen of appData.screens) {
-        appData.screenPrice += +screen.price;  // суммируем стоимость всех экранов
-    }
+   
+    appData.screenPrice = appData.screens.reduce(function(sum, screen) {
+      return sum + screen.price;
+    }, 0);  // суммируем стоимость всех экранов методом reduce 
+    
 
-    for(let key in appData.services) {         // суммируем стоимость всех доп услуг
-      appData.allServicePrices += appData.services[key];
+    for(const service in appData.services) {  // суммируем стоимость всех доп услуг
+      appData.allServicePrices += appData.services[service];
     }
   },
   
