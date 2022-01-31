@@ -1,10 +1,10 @@
 {
 	"camelcase" : true,
-	"asi" : true,
+	"asi" : false,
 	"indent": 2,
 	"undef": true,
 	"quotmark": false,
-	"maxlen": 120,
+	"maxlen": 145,
 	"trailing": true,
 	"curly": true,
 	"strict": true,
@@ -12,5 +12,6 @@
 	"devel": true,
 	"jquery": true,
 	"esversion": 6,
-	"node": true
+	"node": true,
+	"sub": true
 }
