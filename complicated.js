@@ -7,30 +7,42 @@ let langArray = [];
 let lang = 'ru';
 lang = 'en';
 
-if (lang === 'ru') {
-  langArray = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
-} else if (lang === 'en') {
-  langArray = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-}
+// if (lang === 'ru') {
+//   langArray = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+// } else if (lang === 'en') {
+//   langArray = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+// }
 
-console.log(langArray);
+// console.log(langArray);
 
-//1.2//
+// //1.2//
 
-switch(lang) {
-  case 'ru': 
-    langArray = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
-  break;
-  case 'en':
-    langArray = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  break;
-}
+// switch(lang) {
+//   case 'ru': 
+//     langArray = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+//   break;
+//   case 'en':
+//     langArray = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+//   break;
+// }
 
-console.log(langArray);
+// console.log(langArray);
 
 //1.3//
-langArray['ru'] = ['Пн', 'Вт', 'СР', 'Чт', 'Пт', 'Сб', 'Вс'];
-langArray['en'] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+// Способ 1: Через многомерный массив
+
+  langArray['ru'] = ['Пн', 'Вт', 'СР', 'Чт', 'Пт', 'Сб', 'Вс'];
+  langArray['en'] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+console.log(langArray[lang]);
+
+// Способ 2 : Через ассоциативный массив
+
+langArray = {
+  'ru': ['Пн', 'Вт', 'СР', 'Чт', 'Пт', 'Сб', 'Вс'],
+  'en': ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+};
 
 console.log(langArray[lang]);
 
