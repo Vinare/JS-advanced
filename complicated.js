@@ -24,7 +24,8 @@ function declOfNum(n, textForms) {
   return textForms[2];
 }
 
-correctTime = `${hours} ${declOfNum(hours, ['час', 'часа', 'часов'])} ${min} ${declOfNum(min, ['минута', 'минуты', 'минут'])} ${sec} ${declOfNum(sec, ['секунда', 'секунды', 'секунд'])}`;
+correctTime = `${hours} ${declOfNum(hours, ['час', 'часа', 'часов'])} ${min} ${declOfNum(min, ['минута', 'минуты', 'минут'])} 
+${sec} ${declOfNum(sec, ['секунда', 'секунды', 'секунд'])}`;
 
 function getCurrentTime() {
   console.log('Сегодня ' + todayDate[0].toUpperCase() + todayDate.slice(1).replace('г.', 'года, ') + correctTime);
