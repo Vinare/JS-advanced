@@ -14,7 +14,7 @@ let currentDate = todayDate[0].toUpperCase() + todayDate.slice(1).replace('г.',
 let hours = new Date().getHours();
 let min = new Date().getMinutes();
 let sec = new Date().getSeconds(); 
-let correctTime;
+let currentTime = `${hours} ${declOfNum(hours, ['час', 'часа', 'часов'])} ${min} ${declOfNum(min, ['минута', 'минуты', 'минут'])} ${sec} ${declOfNum(sec, ['секунда', 'секунды', 'секунд'])}`;
   
 function declOfNum(n, textForms) {   
   n = Math.abs(n) % 100; 
@@ -25,10 +25,8 @@ function declOfNum(n, textForms) {
   return textForms[2];
 }
 
-correctTime = `${hours} ${declOfNum(hours, ['час', 'часа', 'часов'])} ${min} ${declOfNum(min, ['минута', 'минуты', 'минут'])} ${sec} ${declOfNum(sec, ['секунда', 'секунды', 'секунд'])}`;
-
 function getCurrentTime() {
-  console.log(`Сегодня ${currentDate} ${correctTime}`);
+  console.log(`Сегодня ${currentDate} ${currentTime}`);
 }
 
 setInterval(getCurrentTime, 1000);
